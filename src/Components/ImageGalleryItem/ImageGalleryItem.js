@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Loader from 'react-loader-spinner';
+
 const ImageGalleryItem = ({ image, alt, largePhoto }) => {
   return (
     <li className="ImageGalleryItem">
+      <Loader type="Oval" color="#3f51b5" className="ImageGalleryItem-loader" />
       <img
         src={image}
         alt={alt}

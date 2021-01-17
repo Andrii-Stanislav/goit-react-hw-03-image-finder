@@ -46,16 +46,8 @@ class App extends Component {
   loadMore = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,
+      isLoading: true,
     }));
-
-    // setTimeout(() => {
-    //   console.log(document.documentElement.scrollHeight);
-
-    //   window.scrollTo({
-    //     top: document.documentElement.scrollHeight,
-    //     behavior: 'smooth',
-    //   });
-    // }, 0);
   };
 
   fetchPhotos = () => {

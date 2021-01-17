@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 
+import Loader from 'react-loader-spinner';
+
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
@@ -25,7 +27,16 @@ class Modal extends Component {
     return createPortal(
       <div className="Overlay" onClick={this.props.onClose}>
         <div className="Modal">
-          <img src={this.props.largePhoto} alt={this.props.alt} />
+          <Loader
+            type="Oval"
+            color="#3f51b5"
+            className="ImageGalleryItem-loader"
+          />
+          <img
+            className="Modal-image"
+            src={this.props.largePhoto}
+            alt={this.props.alt}
+          />
         </div>
       </div>,
       modalRoot,
